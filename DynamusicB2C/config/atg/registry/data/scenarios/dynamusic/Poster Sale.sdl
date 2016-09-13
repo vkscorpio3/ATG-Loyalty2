@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE process SYSTEM "dynamosystemresource:/atg/dtds/pdl/pdl_1.0.dtd">
+<process author="admin" creation-time="1144343604141" enabled="false" last-modified-by="admin" modification-time="1144344014318">
+  <segment migrate-subjects="true">
+    <segment-name>Segment 1</segment-name>
+    <!--================================-->
+    <!--== Views an item from ProductCatalog of type Category named Pop  -->
+    <!--================================-->
+    <event id="1">
+      <event-name>atg.dps.ViewItem</event-name>
+      <filter construct="content-repository-filter" operator="eq">
+        <event-property>
+          <property-name>repositoryName</property-name>
+        </event-property>
+        <constant>ProductCatalog</constant>
+      </filter>
+      <filter construct="content-item-descriptor" operator="eq">
+        <event-property>
+          <property-name>itemType</property-name>
+        </event-property>
+        <constant>category</constant>
+      </filter>
+      <filter construct="content-id-filter" operator="isOneOf">
+        <event-property>
+          <property-name>item</property-name>
+          <property-name>repositoryId</property-name>
+        </event-property>
+        <array type="java.lang.String[]">
+          <constant>cat20014</constant>
+        </array>
+      </filter>
+    </event>
+    <!--================================-->
+    <!--== Give promotion promotions: 25% off Posters  -->
+    <!--================================-->
+    <action id="2">
+      <action-name>promotion</action-name>
+      <action-param name="promotions">
+        <array type="java.lang.String[]">
+          <constant>promo10008</constant>
+        </array>
+      </action-param>
+    </action>
+  </segment>
+</process>

@@ -1,0 +1,4 @@
+<id-spaces xml-combine="append">
+  <id-space name="loyaltyPointsPaymentGroup" seed="1" batch-size="10000"
+                                                prefix="mci"/>
+</id-spaces>

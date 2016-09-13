@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+
+ This minimal data source definition is sufficient to using the Solid database
+ shipped with ATG for demo/development purposes. Take a look at the one for the
+ Hypersonic database that is packaged with JBoss for more (but possibly 
+ irrelevant) options. 
+
+ NOTE: the value of <jndi-name> here must agree with the JNDIName property of
+       the atg/dynamo/service/jdbc/JTDataSource component.
+
+  -->
+
+<datasources>
+
+   <local-tx-datasource>
+
+      <!-- The jndi name of the DataSource, it is prefixed with java:/ -->
+      <!-- Datasources are not available outside the virtual machine -->
+      <jndi-name>DynamusicB2BSolidDS</jndi-name>
+
+      <!-- The jdbc url -->
+      <connection-url>jdbc:solid://localhost:1313</connection-url>
+
+      <!-- The driver class -->
+      <driver-class>solid.jdbc.SolidDriver</driver-class>
+
+      <!-- The login and password -->
+      <user-name>b2b</user-name>
+      <password>b2b</password>
+
+      <!-- The minimum connections in a pool/sub-pool. 
+           Pools are lazily constructed on first use -->
+      <min-pool-size>10</min-pool-size>
+
+      <!-- The maximum connections in a pool/sub-pool -->
+      <max-pool-size>10</max-pool-size>
+
+   </local-tx-datasource>
+
+</datasources>
+<!-- @version $Id: //edu/ILT-Courses/main/Commerce/StudentFiles/Commerce/setup/dataSource_files/b2b/dynamusic-b2b-solid-ds.xml#1 $$Change: 514668 $-->

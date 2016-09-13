@@ -1,0 +1,33 @@
+<pipelinemanager xml-combine="append">
+	<pipelinechain name="validatePaymentGroup">
+		<pipelinelink name="dispatchOnPGType">
+			<transition returnvalue="10" link="validateLoyaltyPoints" />
+		</pipelinelink>
+		<pipelinelink name="validateLoyaltyPoints" transaction="TX_MANDATORY">
+			<processor jndi="/loyalty/checkout/ValidateLoyaltyPoints" />
+		</pipelinelink>
+	</pipelinechain>
+
+	<pipelinechain name="validatePaymentGroupPreConfirmation">
+		<pipelinelink name="dispatchOnPGTypePreConfirmation">
+			<transition returnvalue="10"
+				link="validateLoyaltyPointsPreConfirmation" />
+		</pipelinelink>
+		<pipelinelink name="validateLoyaltyPointsPreConfirmation"
+			transaction="TX_MANDATORY">
+			<processor jndi="/loyalty/checkout/ValidateLoyaltyPoints" />
+		</pipelinelink>
+	</pipelinechain>
+
+	<pipelinechain name="validatePaymentGroupNoApproval">
+		<pipelinelink name="dispatchOnPGTypeNoApproval">
+			<transition returnvalue="10"
+				link="validateLoyaltyPointsNoApproval" />
+		</pipelinelink>
+		<pipelinelink name="validateLoyaltyPointsNoApproval"
+			transaction="TX_MANDATORY">
+			<processor jndi="/loyalty/checkout/ValidateLoyaltyPoints" />
+		</pipelinelink>
+
+	</pipelinechain>
+</pipelinemanager>

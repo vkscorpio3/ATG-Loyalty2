@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="classes"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG7.0/DSS/lib/resources.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG7.0/DSS/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG7.0/DPS/lib/resources.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG7.0/DPS/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG7.0/DAS/lib/resources.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG7.0/DAS/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG7.0/DAS/lib/ice.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG7.0/DAS/solid/SolidDriver2.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="classes"/>
+</classpath>

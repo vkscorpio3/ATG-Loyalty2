@@ -1,0 +1,39 @@
+<gsa-template xml-combine="append">
+
+	<item-descriptor name="paymentGroup">
+		<table name="dcspp_pay_group" type="primary" id-column-name="payment_group_id">
+			<property name="type" required="true">
+				<option value="loyaltyPoints" code="777" />
+			</property>
+		</table>
+	</item-descriptor>
+
+	<item-descriptor name="loyaltyPoints" super-type="paymentGroup"
+		sub-type-value="loyaltyPoints">
+		<table name="loyalty_points_payment_group" type="auxiliary"
+			id-column-name="id">
+			<property name="userId" column-name="user_id" data-type="string" />
+			<property name="loyaltyPoints" column-name="loyalty_points"
+				data-type="int" />
+		</table>
+	</item-descriptor>
+
+	<item-descriptor name="paymentStatus">
+		<table name="dcspp_pay_status" type="primary" id-column-name="status_id">
+			<property name="type">
+				<option value="loyaltyPointsStatus" code="999" />
+			</property>
+		</table>
+	</item-descriptor>
+
+	<item-descriptor name="loyaltyPointsStatus" super-type="paymentStatus"
+		sub-type-value="loyaltyPointsStatus" cache-mode="simple"
+		item-cache-timeout="180000">
+
+		<table name="loyalty_status" type="auxiliary" id-column-name="status_id">
+			<property name="authorizationExpiration" column-name="auth_expiration"
+				data-type="timestamp"/>
+		</table>
+	</item-descriptor>
+
+</gsa-template>

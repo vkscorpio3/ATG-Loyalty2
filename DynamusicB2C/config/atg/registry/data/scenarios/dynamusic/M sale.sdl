@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE process SYSTEM "dynamosystemresource:/atg/dtds/pdl/pdl_1.0.dtd">
+<process author="admin" creation-time="1144347305977" enabled="false" last-modified-by="admin" modification-time="1144347381370">
+  <segment migrate-subjects="true">
+    <segment-name>Segment 1</segment-name>
+    <!--================================-->
+    <!--== Registers  -->
+    <!--================================-->
+    <event id="1">
+      <event-name>atg.dps.Register</event-name>
+    </event>
+    <!--================================-->
+    <!--== Gender is female  -->
+    <!--================================-->
+    <condition construct="people-element" id="2">
+      <filter construct="profile-property-filter" operator="eq">
+        <subject-property>
+          <property-name>gender</property-name>
+        </subject-property>
+        <constant>female</constant>
+      </filter>
+    </condition>
+    <!--================================-->
+    <!--== Give promotion promotions: 50 Cents Off M  -->
+    <!--================================-->
+    <action id="3">
+      <action-name>promotion</action-name>
+      <action-param name="promotions">
+        <array type="java.lang.String[]">
+          <constant>promo10011</constant>
+        </array>
+      </action-param>
+    </action>
+  </segment>
+</process>

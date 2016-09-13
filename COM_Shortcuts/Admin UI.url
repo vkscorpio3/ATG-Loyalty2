@@ -1,0 +1,7 @@
+[DEFAULT]
+BASEURL=http://localhost:8840/PioneerCycling/en/index.jsp?_requestid=5
+[InternetShortcut]
+URL=http://localhost:8080/dyn/admin
+Modified=000EA01AC439C9018F
+IconFile=C:\Program Files\Mozilla Firefox\firefox.exe
+IconIndex=1

@@ -1,0 +1,6 @@
+bin\startSQLRepository -m DynamusicB2B -import ..\DynamusicB2B\config\dynamusic\songs-data.xml -repository /dynamusic/SongsRepository
+
+C:\ATG\ATG7.2\home>bin\startSQLRepository -m DynamusicB2C -repository /atg/commerce/inventory/InventoryRepository -export all DynamusicB2CInventoryDemo.xml
+
+C:\ATG\ATG7.2\home>bin\startSQLRepository -m DynamusicB2B -repository /atg/userprofiling/ProfileAdapterRepository -repository /atg/commerce/catalog/ProductCatal
+og -export all DynamusicB2BCatalog2.xml

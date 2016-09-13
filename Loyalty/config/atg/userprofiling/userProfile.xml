@@ -1,0 +1,14 @@
+<gsa-template>
+	<item-descriptor name="user">
+		<table name="loyalty_user_transactions" type="multi"
+			id-column-name="user_id" multi-column-name="sequence_num">
+			<property name="loyaltyTransactions" category="loyalty"
+				data-type="list" component-item-type="loyaltyTransaction" repository="/loyalty/LoyaltyRepository"
+				column-name="loyalty_trans_id" />
+		</table>
+
+ 		<property name="loyaltyAmount" property-type="loyalty.CountLoyalty" 
+			data-type="int" default="0" category="loyalty" writable="false" />  
+
+	</item-descriptor>
+</gsa-template>

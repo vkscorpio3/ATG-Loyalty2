@@ -1,0 +1,7 @@
+[DEFAULT]
+BASEURL=http://localhost:8840/PioneerCycling/en/index.jsp?_requestid=5
+[InternetShortcut]
+URL=http://localhost:8080/dynamusicb2b/storefront.jsp
+Modified=200D7D64C439C901D5
+IconFile=C:\Program Files\Mozilla Firefox\firefox.exe
+IconIndex=1

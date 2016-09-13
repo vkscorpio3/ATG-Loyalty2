@@ -1,0 +1,13 @@
+<gsa-template>
+	<item-descriptor name="user">
+		<table name="loyalty_users_payment_groups" type="multi" id-column-name="id">
+
+			<property category="myCategoryBillingShipping"
+				name="myPaymentGroups" column-name="loyalty_points_group_id" data-type="set"
+				repository="/atg/commerce/order/OrderRepository"
+				component-item-type="paymentGroup">
+			</property>
+
+		</table>
+	</item-descriptor>
+</gsa-template>

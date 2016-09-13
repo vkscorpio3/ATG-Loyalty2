@@ -1,0 +1,24 @@
+<pipelinemanager xml-combine="append">
+	<pipelinechain name="handleSubmitOrder">
+
+		<pipelinelink name="verifyOrderForFulfillment"
+			xml-combine="remove">
+		</pipelinelink>
+
+		<pipelinelink name="verifyOrderForFulfillment"
+			transaction="TX_MANDATORY">
+			<processor
+				jndi="/atg/commerce/fulfillment/processor/VerifyOrderForFulfillment" />
+			<transition returnvalue="1" link="addLoyaltyPointsFulfillment" />
+		</pipelinelink>
+
+		<pipelinelink name="addLoyaltyPointsFulfillment"
+			transaction="TX_MANDATORY">
+			<processor jndi="/loyalty/fulfillment/AddLoyaltyPointsFulfillment" />
+			<transition returnvalue="111"
+				link="splitShippingGroupsFulfillmentChain" />
+			<transition returnvalue="112"
+				link="splitShippingGroupsFulfillmentChain" />
+		</pipelinelink>
+	</pipelinechain>
+</pipelinemanager>
